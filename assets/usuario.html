@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EUCI - Usuario</title>
+    <link rel="stylesheet" href="css/usuario.css">
+</head>
+<body>
+    <header>
+        <h1>EUCI</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="robot-image-wrapper">
+                <img src="recursos/robotin saludo.png" alt="robotin saludo" class="robot-image">
+                <div class="hologram-triangle"></div>
+                <div class="speech-bubble">
+                    <p>¡Hola! </p>
+                </div>
+            </div>
+            <div class="robot-panel">
+                <div class="panel-content">
+                    <p>Ingrese el nombre de quien va a ingresar:</p>
+                    <form>
+                        <input type="text" placeholder="Ingrese su nombre" id="user" class="user-input">
+                        <button type="button" id="continuar" class="boton" onclick="user()">Continuar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

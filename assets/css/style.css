@@ -1,0 +1,57 @@
+body {
+    background-image: url(../recursos/Captura\ de\ pantalla\ 2024-09-11\ 023951.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Encabezado */
+h1 {
+    font-family: "Unkempt", cursive;
+    font-size: 1500%;
+    text-align: center;
+    margin-top: 13%;
+    color: aliceblue;
+}
+
+/* Botón */
+.ingreso {
+    font-size: 30px;
+    margin-left: 40%;
+    margin-top: 0px;
+    padding-top: 28px;
+    padding-bottom: 38px;
+    padding-left: 40px;
+    padding-right: 200px;
+    background-color: transparent;
+    text-decoration: none;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    border: 4px solid rgb(21, 255, 0);
+}
+
+.ingreso:hover {
+    transition: all 1s;
+    border-radius: 41px;
+    box-shadow: 0 0 5px rgb(21, 255, 0), 0 0 25px rgb(21, 255, 0), 0 0 50px rgb(21, 255, 0), 0 0 200px rgb(255, 255, 255);
+}
+
+/* Descripción */
+.descripcion {
+    position: absolute;
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    left: 20px; /* Ajusta la distancia desde el borde izquierdo */
+    background: linear-gradient( rgba(17, 34, 52, 0.7), rgba(21, 255, 0, 0.5));
+    padding: 20px;
+    width: 300px; /* Ajusta el ancho del cuadro según tu preferencia */
+    color: white; /* Cambia el color del texto para mejor contraste */
+    font-family: Arial, sans-serif; /* Cambia la fuente si lo deseas */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Añade una sombra ligera */
+}
+
+.descripcion p {
+    margin: 0 0 10px 0; /* Ajusta el espaciado entre párrafos */
+    line-height: 1.5; /* Mejora la legibilidad del texto */
+}
