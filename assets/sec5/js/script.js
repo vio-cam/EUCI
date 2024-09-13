@@ -41,28 +41,88 @@ var puntajePorOpcion = [
 var puntaje = 0;
 var i = 0;
 
+var robotEnojo = document.createElement('img');
+robotEnojo.src = '../recursos/robotin_enojo.png';
+robotEnojo.alt = 'Robot enojado';
+robotEnojo.className = 'robot-enojo';
+document.body.appendChild(robotEnojo);
+
 function actualizarPuntaje(opcion) {
     var indice = opcion - 1;
-    puntaje = puntaje + puntajePorOpcion[i][indice];
-    i = i + 1;
-    if (i < preguntas.length) {
-        siguientePregunta();
+    var botones = document.getElementsByClassName('quiz-option');
+
+    if (puntajePorOpcion[i][indice] === 0) {
+        // Mostrar feedback de respuesta incorrecta
+        botones[indice].classList.add('opcion-incorrecta');
+        mostrarRobotEnojado();
+
+        // Mostrar la opción correcta
+        setTimeout(function() {
+            for (var j = 0; j < botones.length; j++) {
+                if (puntajePorOpcion[i][j] === 2) {
+                    botones[j].classList.add('opcion-correcta');
+                }
+                botones[j].disabled = true;
+            }
+
+            // Esperar antes de pasar a la siguiente pregunta
+            setTimeout(function() {
+                ocultarRobotEnojado();
+                i = i + 1; // Avanzar a la siguiente pregunta
+                siguientePregunta();
+            }, 2000); // Espera antes de avanzar, puedes ajustar este tiempo
+        }, 1000); // Espera para mostrar la respuesta correcta
     } else {
-        //mostrarResultado();
+        puntaje += puntajePorOpcion[i][indice];
+        i = i + 1;
+        siguientePregunta();
+    }
+}
+
+function mostrarRobotEnojado() {
+    robotEnojo.classList.add('mostrar-enojo');
+    setTimeout(function() {
+        robotEnojo.classList.remove('mostrar-enojo');
+    }, 1500); // El robot permanece visible durante 1.5 segundos antes de regresar
+}
+
+function ocultarRobotEnojado() {
+    setTimeout(function() {
+        robotEnojo.classList.remove('mostrar-enojo');
+    }, 2000); // El robot permanece oculto después de que se muestra la respuesta correcta
+}
+
+function siguientePregunta() {
+    var botones = document.getElementsByClassName('quiz-option');
+
+    // Resetear los estilos de los botones
+    for (var j = 0; j < botones.length; j++) {
+        botones[j].classList.remove('opcion-incorrecta', 'opcion-correcta');
+        botones[j].disabled = false;
+    }
+
+    // Actualizar pregunta y opciones
+    if (i < preguntas.length) {
+        document.getElementById("pregunta").innerHTML = preguntas[i];
+        document.getElementById("op1").innerHTML = opciones[i][0];
+        document.getElementById("op2").innerHTML = opciones[i][1];
+        document.getElementById("op3").innerHTML = opciones[i][2];
+
+        // Actualizar la imagen
+        var imagenElement = document.getElementById("imagenPregunta");
+        if (imagenes[i]) {
+            imagenElement.src = imagenes[i];
+            imagenElement.style.display = "block";
+        } else {
+            imagenElement.style.display = "none";
+        }
+    } else {
         localStorage.setItem("puntaje", puntaje);
         window.location.href = '../resultado.html';
     }
 }
 
-function siguientePregunta() {
-    document.getElementById("pregunta").innerHTML = preguntas[i];
-    document.getElementById("op1").innerHTML = opciones[i][0];
-    document.getElementById("op2").innerHTML = opciones[i][1];
-    document.getElementById("op3").innerHTML = opciones[i][2];
-    
-}
-
-siguientePregunta();
+// Asignar eventos a los botones
 document.getElementById("op1").addEventListener("click", function() {
     actualizarPuntaje(1);
 });
@@ -72,3 +132,5 @@ document.getElementById("op2").addEventListener("click", function() {
 document.getElementById("op3").addEventListener("click", function() {
     actualizarPuntaje(3);
 });
+
+siguientePregunta();

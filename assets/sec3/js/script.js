@@ -38,51 +38,103 @@ var puntajePorOpcion = [
 ];
 
 var imagenes = [
-    "https://media.istockphoto.com/id/1392548173/es/vec…20&c=i0ecdzZzFEjfjlG6n5J2or1gYFZhZPxLn6Grp9zlVKM=",
-    "https://lh6.googleusercontent.com/proxy/JV2YFA7mih…jkzvBq-JzCuMXaYXZwRqllmH4Wt3eIwicgBThHZdDEHlZJe2Q",
+    "https://www.dciencia.es/wp-content/uploads/ox%C3%ADgeno.jpg",
+    "https://cursoparalaunam.com/wp-content/uploads/2022/03/enlace-covalente-doble.jpg",
     "https://liceoagb.es/fisquim/imagenes/teoatom36.jpg",
     "https://believe.earth/wp-content/uploads/2018/10/economia-agua-pixabay-believe-earth-1024x683.jpg",
     "https://beta-static.fishersci.com/content/dam/fishersci/en_US/images/periodic-table/mobile-table.png",
     "https://www.shutterstock.com/image-vector/neutrali…acid-base-reaction-chemistry-260nw-2070193400.jpg",
-    "https://esc16de1posse.wordpress.com/wp-content/upl…diferencias-entre-disolucion-y-desintegracion.jpg",
-    "https://mediateca.educa.madrid.org/imagen.php?id=veshvog6wmx6ea42&m=0&ext=.jpg",
-    "ttps://cdn-icons-png.flaticon.com/512/2286/2286119.png",
-    "https://energyeducation.ca/wiki2develop/images/3/35/CARBON_es.png"
+    "https://www.shutterstock.com/image-vector/schemati…ity-chemistry-solute-solvent-260nw-2142221075.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFvLeSfk-STKYjlhCNT5Rm0sigIHDcDmfxdg&s",
+    "https://delfincar.com/wp-content/uploads/2024/05/catalizador.jpg",
+    "https://clickmica.fundaciondescubre.es/files/2016/12/coal-471903_1280-e1481916942271-768x514.jpg"
 ];
 
 var puntaje = 0;
 var i = 0;
 
+var robotEnojo = document.createElement('img');
+robotEnojo.src = '../recursos/robotin_enojo.png';
+robotEnojo.alt = 'Robot enojado';
+robotEnojo.className = 'robot-enojo';
+document.body.appendChild(robotEnojo);
+
 function actualizarPuntaje(opcion) {
     var indice = opcion - 1;
-    puntaje = puntaje + puntajePorOpcion[i][indice];
-    i = i + 1;
-    if (i < preguntas.length) {
-        siguientePregunta();
+    var botones = document.getElementsByClassName('quiz-option');
+
+    if (puntajePorOpcion[i][indice] === 0) {
+        // Mostrar feedback de respuesta incorrecta
+        botones[indice].classList.add('opcion-incorrecta');
+        mostrarRobotEnojado();
+
+        // Mostrar la opción correcta
+        setTimeout(function() {
+            for (var j = 0; j < botones.length; j++) {
+                if (puntajePorOpcion[i][j] === 2) {
+                    botones[j].classList.add('opcion-correcta');
+                }
+                botones[j].disabled = true;
+            }
+
+            // Esperar antes de pasar a la siguiente pregunta
+            setTimeout(function() {
+                ocultarRobotEnojado();
+                i = i + 1; // Avanzar a la siguiente pregunta
+                siguientePregunta();
+            }, 2000); // Espera antes de avanzar, puedes ajustar este tiempo
+        }, 1000); // Espera para mostrar la respuesta correcta
     } else {
-        //mostrarResultado();
+        puntaje += puntajePorOpcion[i][indice];
+        i = i + 1;
+        siguientePregunta();
+    }
+}
+
+function mostrarRobotEnojado() {
+    robotEnojo.classList.add('mostrar-enojo');
+    setTimeout(function() {
+        robotEnojo.classList.remove('mostrar-enojo');
+    }, 1500); // El robot permanece visible durante 1.5 segundos antes de regresar
+}
+
+function ocultarRobotEnojado() {
+    setTimeout(function() {
+        robotEnojo.classList.remove('mostrar-enojo');
+    }, 2000); // El robot permanece oculto después de que se muestra la respuesta correcta
+}
+
+function siguientePregunta() {
+    var botones = document.getElementsByClassName('quiz-option');
+
+    // Resetear los estilos de los botones
+    for (var j = 0; j < botones.length; j++) {
+        botones[j].classList.remove('opcion-incorrecta', 'opcion-correcta');
+        botones[j].disabled = false;
+    }
+
+    // Actualizar pregunta y opciones
+    if (i < preguntas.length) {
+        document.getElementById("pregunta").innerHTML = preguntas[i];
+        document.getElementById("op1").innerHTML = opciones[i][0];
+        document.getElementById("op2").innerHTML = opciones[i][1];
+        document.getElementById("op3").innerHTML = opciones[i][2];
+
+        // Actualizar la imagen
+        var imagenElement = document.getElementById("imagenPregunta");
+        if (imagenes[i]) {
+            imagenElement.src = imagenes[i];
+            imagenElement.style.display = "block";
+        } else {
+            imagenElement.style.display = "none";
+        }
+    } else {
         localStorage.setItem("puntaje", puntaje);
         window.location.href = '../resultado.html';
     }
 }
 
-function siguientePregunta() {
-    document.getElementById("pregunta").innerHTML = preguntas[i];
-    document.getElementById("op1").innerHTML = opciones[i][0];
-    document.getElementById("op2").innerHTML = opciones[i][1];
-    document.getElementById("op3").innerHTML = opciones[i][2];
-    
-    // Actualizar la imagen
-    var imagenElement = document.getElementById("imagenPregunta");
-    if (imagenes[i]) {
-        imagenElement.src = imagenes[i];
-        imagenElement.style.display = "block";
-    } else {
-        imagenElement.style.display = "none";
-    }
-}
-
-siguientePregunta();
+// Asignar eventos a los botones
 document.getElementById("op1").addEventListener("click", function() {
     actualizarPuntaje(1);
 });
@@ -92,3 +144,5 @@ document.getElementById("op2").addEventListener("click", function() {
 document.getElementById("op3").addEventListener("click", function() {
     actualizarPuntaje(3);
 });
+
+siguientePregunta();

@@ -38,13 +38,13 @@ var puntajePorOpcion = [
 ];
 
 var imagenes = [
-    "https://cdn.goconqr.com/uploads/media/image/326088…/desktop_eeff0b3c-d59c-42a9-a186-269865428ba1.jpg",
-    "https://cdn.goconqr.com/uploads/node/image/1076183…desktop_f3bbafcf-c787-4dd5-928f-63932d0c4c38.jpeg",
+    "https://ode.educacion.es/INTEF/es_2023120912_9225348/vistaPreviaAgrega.png",
+    "https://concepto.de/wp-content/uploads/2018/08/nucleo-celular1-e1535469164136.jpg",
     "https://concepto.de/wp-content/uploads/2018/10/celula-procariota-min-e1539192866612.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqBk6Jpg8CZdtwigwcwBFiZyoNW2XpZiEY5w&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw2QQdQ3NKaZTgX3t9A4MyWuAhKMAsQbR05w&s",
     "https://www.reproduccionasistida.org/wp-content//gametos-ovulos-espermatozoides.png",
     "https://upload.wikimedia.org/wikipedia/commons/c/ca/Mitochondrion_%28borderless_version%29-es.svg",
-    "https://healthincode.com/wp-content/uploads/2023/01/son-genes.jpg",
+    "https://www.reproduccionasistida.org/wp-content//gen-glosario.png",
     "https://blog.aegon.es/wp-content/uploads/2022/06/niveles-glucosa-sangre.jpg",
     "https://cdn0.ecologiaverde.com/es/posts/9/7/5/que_es_la_clorofila_y_sus_tipos_2579_orig.jpg",
     "https://raed.academy/wp-content/uploads/2021/03/evolucion-del-Hombre-dstNtc.jpeg"
@@ -53,36 +53,88 @@ var imagenes = [
 var puntaje = 0;
 var i = 0;
 
+var robotEnojo = document.createElement('img');
+robotEnojo.src = '../recursos/robotin_enojo.png';
+robotEnojo.alt = 'Robot enojado';
+robotEnojo.className = 'robot-enojo';
+document.body.appendChild(robotEnojo);
+
 function actualizarPuntaje(opcion) {
     var indice = opcion - 1;
-    puntaje = puntaje + puntajePorOpcion[i][indice];
-    i = i + 1;
-    if (i < preguntas.length) {
-        siguientePregunta();
+    var botones = document.getElementsByClassName('quiz-option');
+
+    if (puntajePorOpcion[i][indice] === 0) {
+        // Mostrar feedback de respuesta incorrecta
+        botones[indice].classList.add('opcion-incorrecta');
+        mostrarRobotEnojado();
+
+        // Mostrar la opción correcta
+        setTimeout(function() {
+            for (var j = 0; j < botones.length; j++) {
+                if (puntajePorOpcion[i][j] === 2) {
+                    botones[j].classList.add('opcion-correcta');
+                }
+                botones[j].disabled = true;
+            }
+
+            // Esperar antes de pasar a la siguiente pregunta
+            setTimeout(function() {
+                ocultarRobotEnojado();
+                i = i + 1; // Avanzar a la siguiente pregunta
+                siguientePregunta();
+            }, 2000); // Espera antes de avanzar, puedes ajustar este tiempo
+        }, 1000); // Espera para mostrar la respuesta correcta
     } else {
-        //mostrarResultado();
+        puntaje += puntajePorOpcion[i][indice];
+        i = i + 1;
+        siguientePregunta();
+    }
+}
+
+function mostrarRobotEnojado() {
+    robotEnojo.classList.add('mostrar-enojo');
+    setTimeout(function() {
+        robotEnojo.classList.remove('mostrar-enojo');
+    }, 1500); // El robot permanece visible durante 1.5 segundos antes de regresar
+}
+
+function ocultarRobotEnojado() {
+    setTimeout(function() {
+        robotEnojo.classList.remove('mostrar-enojo');
+    }, 2000); // El robot permanece oculto después de que se muestra la respuesta correcta
+}
+
+function siguientePregunta() {
+    var botones = document.getElementsByClassName('quiz-option');
+
+    // Resetear los estilos de los botones
+    for (var j = 0; j < botones.length; j++) {
+        botones[j].classList.remove('opcion-incorrecta', 'opcion-correcta');
+        botones[j].disabled = false;
+    }
+
+    // Actualizar pregunta y opciones
+    if (i < preguntas.length) {
+        document.getElementById("pregunta").innerHTML = preguntas[i];
+        document.getElementById("op1").innerHTML = opciones[i][0];
+        document.getElementById("op2").innerHTML = opciones[i][1];
+        document.getElementById("op3").innerHTML = opciones[i][2];
+
+        // Actualizar la imagen
+        var imagenElement = document.getElementById("imagenPregunta");
+        if (imagenes[i]) {
+            imagenElement.src = imagenes[i];
+            imagenElement.style.display = "block";
+        } else {
+            imagenElement.style.display = "none";
+        }
+    } else {
         localStorage.setItem("puntaje", puntaje);
         window.location.href = '../resultado.html';
     }
 }
 
-function siguientePregunta() {
-    document.getElementById("pregunta").innerHTML = preguntas[i];
-    document.getElementById("op1").innerHTML = opciones[i][0];
-    document.getElementById("op2").innerHTML = opciones[i][1];
-    document.getElementById("op3").innerHTML = opciones[i][2];
-    
-    // Actualizar la imagen
-    var imagenElement = document.getElementById("imagenPregunta");
-    if (imagenes[i]) {
-        imagenElement.src = imagenes[i];
-        imagenElement.style.display = "block";
-    } else {
-        imagenElement.style.display = "none";
-    }
-}
-
-siguientePregunta();
+// Asignar eventos a los botones
 document.getElementById("op1").addEventListener("click", function() {
     actualizarPuntaje(1);
 });
@@ -92,3 +144,5 @@ document.getElementById("op2").addEventListener("click", function() {
 document.getElementById("op3").addEventListener("click", function() {
     actualizarPuntaje(3);
 });
+
+siguientePregunta();
