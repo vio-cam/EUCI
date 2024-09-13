@@ -5,19 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EUCI</title>
     <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 <body>
     <header>
         <h1>EUCI</h1>
     </header>
-        <button class="ingreso" onclick="ingreso()">INGRESAR</button>
-        <div class="descripcion">
-            <p>¿Eres un apasionado de la ciencia y la tecnología?</p>
-                <p>¿Te gustaría medir tus conocimientos y descubrir tu tipo de aprendizaje de manera divertida y educativa?</p>
-                <p>En EUCI, te ofrecemos una plataforma interactiva diseñada especialmente para ti.</p>
-                <p>Explora nuestras pruebas de conocimientos en ciencias y tecnología para evaluar tu comprensión en diversas áreas y participa en nuestro test de estilo de aprendizaje para conocerte mejor y optimizar tu proceso de estudio.</p>
+
+    <!-- Contenedor del robot y panel -->
+    <div class="container">
+        <div class="robot"></div>
+        <div class="panel">
+            <div class="circuit-left"></div>
+            <div class="circuit-right"></div>
+            <div class="controls">
+                <div class="control"></div>
+                <div class="control"></div>
+            </div>
         </div>
+    </div>
+
+    <!-- Botón de ingreso y descripción -->
+    <button class="ingreso" onclick="ingreso()">INGRESAR</button>
+    <div class="descripcion">
+        <p>¿Eres un apasionado de la ciencia y la tecnología?</p>
+        <p>¿Te gustaría medir tus conocimientos y descubrir tu tipo de aprendizaje de manera divertida y educativa?</p>
+        <p>En EUCI, te ofrecemos una plataforma interactiva diseñada especialmente para ti.</p>
+        <p>Explora nuestras pruebas de conocimientos en ciencias y tecnología para evaluar tu comprensión en diversas áreas y participa en nuestro test de estilo de aprendizaje para conocerte mejor y optimizar tu proceso de estudio.</p>
+    </div>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>

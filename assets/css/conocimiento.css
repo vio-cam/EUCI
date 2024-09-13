@@ -74,7 +74,7 @@ main {
 /* Speech Bubble Styling */
 .speech-bubble {
     position: absolute;
-    top: -60px; /* Adjust position based on image size */
+    top: -100px; /* Adjust position based on image size */
     left: 150px; /* Adjust position based on image size */
     width: 200px;
     background: rgba(0, 255, 0, 0.8);

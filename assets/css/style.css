@@ -1,57 +1,196 @@
+/* General Body Styling */
 body {
     background-image: url(../recursos/Captura\ de\ pantalla\ 2024-09-11\ 023951.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center center; /* Centra la imagen */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
 }
 
 /* Encabezado */
 h1 {
     font-family: "Unkempt", cursive;
-    font-size: 1500%;
+    font-size: 15vw; /* Ajustado para mantener el tamaño relativo */
     text-align: center;
-    margin-top: 13%;
+    margin-top: 25vh; /* Se usa vh para mantener la relación de altura */
     color: aliceblue;
 }
 
 /* Botón */
 .ingreso {
-    font-size: 30px;
+    font-size: 2vw; /* Tamaño del texto relativo al viewport */
     margin-left: 40%;
-    margin-top: 0px;
-    padding-top: 28px;
-    padding-bottom: 38px;
-    padding-left: 40px;
-    padding-right: 200px;
+    margin-top: 0;
+    padding: 2vh 2vw; /* Padding relativo para mantener proporciones */
+    padding-right: 12vw;
     background-color: transparent;
     text-decoration: none;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 500;
-    border: 4px solid rgb(21, 255, 0);
+    border: 0.4vw solid rgb(21, 255, 0); /* Bordes relativos */
 }
 
 .ingreso:hover {
     transition: all 1s;
-    border-radius: 41px;
-    box-shadow: 0 0 5px rgb(21, 255, 0), 0 0 25px rgb(21, 255, 0), 0 0 50px rgb(21, 255, 0), 0 0 200px rgb(255, 255, 255);
+    border-radius: 2vw; /* Bordes redondeados relativos */
+    box-shadow: 0 0 0.5vw rgb(21, 255, 0), 0 0 2.5vw rgb(21, 255, 0), 0 0 5vw rgb(21, 255, 0), 0 0 20vw rgb(255, 255, 255);
 }
 
 /* Descripción */
 .descripcion {
     position: absolute;
-    top: 10px; /* Ajusta la distancia desde la parte superior */
-    left: 20px; /* Ajusta la distancia desde el borde izquierdo */
-    background: linear-gradient( rgba(17, 34, 52, 0.7), rgba(21, 255, 0, 0.5));
-    padding: 20px;
-    width: 300px; /* Ajusta el ancho del cuadro según tu preferencia */
-    color: white; /* Cambia el color del texto para mejor contraste */
-    font-family: Arial, sans-serif; /* Cambia la fuente si lo deseas */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Añade una sombra ligera */
+    top: 1vh; /* Posición ajustada relativa a la altura */
+    left: 2vw; /* Posición ajustada relativa al ancho */
+    background: linear-gradient(rgba(17, 34, 52, 0.7), rgba(21, 255, 0, 0.5));
+    padding: 2vh 2vw; /* Padding relativo */
+    width: 20vw; /* Ancho ajustado relativo */
+    color: white;
+    font-family: Arial, sans-serif;
+    border-radius: 1vw; /* Bordes redondeados relativos */
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.3); /* Sombra relativa */
 }
 
 .descripcion p {
-    margin: 0 0 10px 0; /* Ajusta el espaciado entre párrafos */
-    line-height: 1.5; /* Mejora la legibilidad del texto */
+    margin: 0 0 1vh 0; /* Espaciado entre párrafos relativo */
+    line-height: 1.5;
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .ingreso {
+        margin-left: 30%;
+        padding: 2vh 3vw;
+    }body {
+        background-image: url(../recursos/Captura\ de\ pantalla\ 2024-09-11\ 023951.png);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center; /* Centra la imagen */
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        color: #e0e0e0;
+        position: relative; /* Necesario para posicionar elementos hijos absolutamente */
+    }
+    
+    /* Encabezado */
+    h1 {
+        position: absolute; /* Permite mantener el encabezado en una posición fija */
+        top: 25vh; /* Ajusta el espacio desde el top en relación a la altura de la ventana */
+        left: 50%; /* Centra horizontalmente */
+        transform: translateX(-50%); /* Compensa el desplazamiento para centrar */
+        font-family: "Unkempt", cursive;
+        font-size: 15vw; /* Tamaño relativo para adaptarse a la ventana */
+        text-align: center;
+        color: aliceblue;
+        margin: 0; /* Elimina el margen predeterminado */
+    }
+    
+    /* Botón */
+    .ingreso {
+        position: absolute; /* Permite mantener el botón en una posición fija */
+        bottom: 10vh; /* Ajusta el espacio desde el bottom en relación a la altura de la ventana */
+        left: 50%; /* Centra horizontalmente */
+        transform: translateX(-50%); /* Compensa el desplazamiento para centrar */
+        font-size: 2vw; /* Tamaño del texto relativo al viewport */
+        padding: 2vh 2vw; /* Padding relativo para mantener proporciones */
+        padding-right: 12vw;
+        background-color: transparent;
+        text-decoration: none;
+        color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 500;
+        border: 0.4vw solid rgb(21, 255, 0); /* Bordes relativos */
+    }
+    
+    /* Hover del botón */
+    .ingreso:hover {
+        transition: all 1s;
+        border-radius: 2vw; /* Bordes redondeados relativos */
+        box-shadow: 0 0 0.5vw rgb(21, 255, 0), 0 0 2.5vw rgb(21, 255, 0), 0 0 5vw rgb(21, 255, 0), 0 0 20vw rgb(255, 255, 255);
+    }
+    
+    /* Descripción */
+    .descripcion {
+        position: absolute;
+        top: 1vh; /* Posición ajustada relativa a la altura */
+        left: 2vw; /* Posición ajustada relativa al ancho */
+        background: linear-gradient(rgba(17, 34, 52, 0.7), rgba(21, 255, 0, 0.5));
+        padding: 2vh 2vw; /* Padding relativo */
+        width: 20vw; /* Ancho ajustado relativo */
+        color: white;
+        font-family: Arial, sans-serif;
+        border-radius: 1vw; /* Bordes redondeados relativos */
+        box-shadow: 0 0 1vw rgba(0, 0, 0, 0.3); /* Sombra relativa */
+    }
+    
+    .descripcion p {
+        margin: 0 0 1vh 0; /* Espaciado entre párrafos relativo */
+        line-height: 1.5;
+    }
+    
+    /* Media Query para pantallas más pequeñas */
+    @media (max-width: 768px) {
+        .ingreso {
+            font-size: 3vw; /* Ajusta el tamaño del texto */
+            padding: 2vh 3vw;
+            bottom: 8vh; /* Ajusta el espacio desde el bottom */
+        }
+        
+        .descripcion {
+            left: 5vw;
+            width: 80vw;
+        }
+    }
+    
+    /* Media Query para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 20vw; /* Ajusta el tamaño del texto en pantallas muy pequeñas */
+            top: 15vh; /* Ajusta el margen superior */
+        }
+        
+        .ingreso {
+            font-size: 4vw; /* Ajusta el tamaño del texto */
+            padding: 2vh 4vw;
+            bottom: 5vh; /* Ajusta el espacio desde el bottom */
+        }
+    
+        .descripcion {
+            left: 4vw;
+            width: 90vw;
+            font-size: 3vw; /* Ajusta el tamaño del texto */
+        }
+    }
+    
+    
+    .descripcion {
+        left: 5vw;
+        width: 80vw;
+    }
+}
+
+/* Media Query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20vw; /* Ajusta el tamaño del texto en pantallas muy pequeñas */
+        margin-top: 10vh; /* Ajusta el margen superior */
+    }
+    
+    .ingreso {
+        font-size: 4vw; /* Ajusta el tamaño del texto */
+        margin-left: 20%;
+        padding: 2vh 4vw;
+    }
+
+    .descripcion {
+        left: 4vw;
+        width: 90vw;
+        font-size: 3vw; /* Ajusta el tamaño del texto */
+    }
 }

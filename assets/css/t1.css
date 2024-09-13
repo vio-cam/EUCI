@@ -10,6 +10,7 @@ body {
     align-items: center;
     height: 100vh;
     text-align: center;
+    position: relative; /* Necesario para posicionar el robot en relación a body */
 }
 
 /* Quiz Container */
@@ -20,6 +21,8 @@ body {
     box-shadow: 0 0 25px rgba(0, 255, 0, 0.5);
     width: 80%;
     max-width: 700px;
+    position: relative; /* Necesario para z-index */
+    z-index: 10; /* Asegura que el contenedor esté encima del robot */
 }
 
 /* Quiz Title */
@@ -73,13 +76,27 @@ body {
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
 }
 
+/* Robot Enfado */
 .robot-enojo {
-    position: absolute;
-    top: -150px;
-    right: 10px;
-    width: 150px;
-    transition: top 0.5s ease-in-out;
-    display: none;
+    position: fixed;
+    bottom: 0; /* Ajusta el espacio desde el fondo */
+    right: -250px; /* Ajusta el espacio desde la derecha para que quede completamente fuera de la pantalla */
+    width: 250px;
+    height: auto;
+    transition: transform 1s ease-out, display 0s linear 1s; /* Transición para mover el robot y retardo para ocultar */
+    z-index: 5; /* Asegura que el robot esté detrás del contenedor */
+}
+
+.robot-enojo.mostrar-enojo {
+    display: block; /* Asegura que el robot se muestre */
+    transform: translateX(-120px); /* Mueve el robot parcialmente dentro de la pantalla */
+    transition: transform 1s ease-out; /* Transición para mover el robot */
+}
+
+.robot-enojo.ocultar {
+    transform: translateX(250px); /* Mueve el robot completamente fuera de la pantalla */
+    transition: transform 1s ease-out; /* Transición para mover el robot fuera de la pantalla */
+    display: none; /* Oculta el robot después de la transición */
 }
 
 /* Opción seleccionada incorrecta */
@@ -95,25 +112,3 @@ body {
     color: #000;
     border-color: #00ff00;
 }
-
-/* Mostrar el robot enojado */
-.mostrar-enojo {
-    display: block;
-    top: 50px;
-}
-
-/* Estilos del robot enojado */
-.robot-enojo {
-    position: fixed;
-    bottom: 20px;
-    left: -200px; /* Posición inicial fuera de la pantalla */
-    width: 250px;
-    height: auto;
-    transition: transform 2s ease-in-out; /* Transición suave para el movimiento */
-
-}
-
-.robot-enojo.mostrar-enojo {
-    transform: translateX(520px); /* Mueve el robot dentro de la pantalla */
-}
-
