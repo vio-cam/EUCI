@@ -3,20 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EUCI</title>
+    <title>EUCI - Selección de Nivel</title>
+    <link rel="stylesheet" href="css/seleccion.css">
 </head>
 <body>
-    <p>Seleccione su nivel secundario:</p>
-    <div class="boton_Sec1">
-        <button type="button" class="botons1" onclick="s1()">Primero</button>
-        <button type="button" class="botons2" onclick="s2()">Segundo</button>
-        <button type="button" class="botons3" onclick="s3()">Tercero</button>
-    </div>
-    <br>
-    <div class="boton_Sec2">
-        <button type="button" class="botons4" onclick="s4()">Cuarto</button>
-        <button type="button" class="botons5" onclick="s5()">Quinto</button>
-    </div>
+    <header>
+        <h1>EUCI</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="robot-image-wrapper">
+                <img src="recursos/robotin habla.png" alt="robotin selecciona nivel" class="robot-image">
+                <div class="hologram-triangle"></div>
+                <div class="speech-bubble">
+                    <p>Seleccione su nivel secundario:</p>
+                </div>
+            </div>
+            <div class="robot-panel">
+                <div class="panel-content">
+                    <div class="boton_Sec1">
+                        <button type="button" class="boton1" onclick="s1()">Primero</button>
+                        <button type="button" class="boton2" onclick="s2()">Segundo</button>
+                        <button type="button" class="boton3" onclick="s3()">Tercero</button>
+                    </div>
+                    <br>
+                    <div class="boton_Sec2">
+                        <button type="button" class="boton4" onclick="s4()">Cuarto</button>
+                        <button type="button" class="boton5" onclick="s5()">Quinto</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <script src="js/script.js"></script>
 </body>
 </html>

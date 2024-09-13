@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EUCI</title>
+    <title>EUCI - Cuestionario C y T</title>
+    <link rel="stylesheet" href="../css/t1.css">
 </head>
 <body>
-    <div id="quiz">
-        <p id="pregunta"></p>
-        <img id="imagenPregunta" src="" alt="Imagen de la pregunta" style="display:none;">
-        <button id="op1"></button>
-        <button id="op2"></button>
-        <button id="op3"></button>
+    <div id="quiz" class="quiz-container">
+        <h1 class="quiz-title">Cuestionario de Ciencia y Tecnología</h1>
+        <p id="pregunta" class="quiz-question"></p>
+        <img id="imagenPregunta" src="" alt="Imagen de la pregunta" class="quiz-image">
+        <div class="quiz-options">
+            <button id="op1" class="quiz-option"></button>
+            <button id="op2" class="quiz-option"></button>
+            <button id="op3" class="quiz-option"></button>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>

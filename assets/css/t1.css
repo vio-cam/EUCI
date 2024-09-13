@@ -1,0 +1,119 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 128, 0, 0.8)), url('../recursos/tecnologia_fondo.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Quiz Container */
+.quiz-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.5);
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Quiz Title */
+.quiz-title {
+    font-size: 2.5em;
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+/* Quiz Question */
+.quiz-question {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Quiz Image */
+.quiz-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    margin-left: 32%;
+    margin-bottom: 20px;
+    display: none;
+}
+
+/* Quiz Options */
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Quiz Option Button */
+.quiz-option {
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #00ff00;
+    background: transparent;
+    color: #00ff00;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+}
+
+.quiz-option:hover {
+    background: #00ff00;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+}
+
+.robot-enojo {
+    position: absolute;
+    top: -150px;
+    right: 10px;
+    width: 150px;
+    transition: top 0.5s ease-in-out;
+    display: none;
+}
+
+/* Opción seleccionada incorrecta */
+.opcion-incorrecta {
+    background-color: #ff0000;
+    color: #fff;
+    border-color: #ff0000;
+}
+
+/* Opción correcta después de mostrar la incorrecta */
+.opcion-correcta {
+    background-color: #00ff00;
+    color: #000;
+    border-color: #00ff00;
+}
+
+/* Mostrar el robot enojado */
+.mostrar-enojo {
+    display: block;
+    top: 50px;
+}
+
+/* Estilos del robot enojado */
+.robot-enojo {
+    position: fixed;
+    bottom: 20px;
+    left: -200px; /* Posición inicial fuera de la pantalla */
+    width: 250px;
+    height: auto;
+    transition: transform 2s ease-in-out; /* Transición suave para el movimiento */
+
+}
+
+.robot-enojo.mostrar-enojo {
+    transform: translateX(520px); /* Mueve el robot dentro de la pantalla */
+}
+
