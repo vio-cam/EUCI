@@ -4,14 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EUCI</title>
+    <link rel="stylesheet" href="css/resultado .css">
 </head>
 <body>
-    <p id="resultado" class="resultado"></p>
-    <p>Ahora diganos sabe lo que es un tipo o estilo de aprendizaje?</p>
-    <button onclick="si()">si por supuesto </button>
-    <button onclick="maso()"> creo que si</button>
-    <button onclick="no()">para nada, nunca escuche sobre eso</button>
+    <div class="container">
+        <div class="robot-panel"></div>
+            <div class="robot-image-wrapper">
+                <img src="recursos/robot_puntaje.png" alt="Robotín" class="robot-image">
+                <div class="hologram-triangle"></div>
+                <div class="speech-bubble" id="robot-dialog"></div>
+            </div>
+        </div>
+        <div class="panel-control">
+            <div class="resultado-circle">
+                <div id="resultado" class="resultado">0%</div>
+            </div>
+            <div class="panel-content">
+                <p>Ahora díganos, ¿sabe lo que es un tipo o estilo de aprendizaje?</p>
+                <button onclick="si()">Sí, por supuesto</button>
+                <button onclick="maso()">Creo que sí</button>
+                <button onclick="no()">Para nada, nunca escuché sobre eso</button>
+            </div>
+        </div>
+        
+    </div>
     <script src="js/resultado.js"></script>
 </body>
-
 </html>
