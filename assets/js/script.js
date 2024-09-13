@@ -5,13 +5,13 @@ function ingreso(){
 
 function user(){
     var nombre = document.getElementById("user").value;
-    localStorage.setItem("name", nombre);
+    localStorage.setItem('name', nombre);
     window.location.href = 'conoc.html';
 }
 
 function agregar_nombre() {
     var anterior = document.getElementById("hola");
-    var actual = localStorage.getItem("name");
+    var actual = localStorage.getItem('name');
     var mensaje = '<span>, digame le gustaria poner a prueba sus conocimientos?</span>';
     actual = actual + mensaje; 
     anterior.innerHTML = anterior.innerHTML + actual;

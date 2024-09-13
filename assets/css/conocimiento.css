@@ -1,3 +1,4 @@
+/* conocimiento.css */
 /* General Body Styling */
 body {
     margin: 0;
@@ -113,23 +114,6 @@ main {
     margin-bottom: 20px;
 }
 
-/* Input Styling */
-.user-input {
-    width: calc(100% - 20px);
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #00ff00;
-    background: rgba(0, 0, 0, 0.6);
-    color: #e0e0e0;
-    font-size: 1em;
-    margin-bottom: 20px;
-    outline: none;
-}
-
-.user-input::placeholder {
-    color: #a0a0a0;
-}
-
 /* Button Styling */
 .boton {
     font-size: 1.2em;
@@ -141,6 +125,7 @@ main {
     cursor: pointer;
     transition: all 0.4s ease;
     text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+    margin-bottom: 10px; /* Space between buttons */
 }
 
 .boton:hover {
