@@ -20,7 +20,7 @@ var resultadoElement = document.getElementById('resultado');
 resultadoElement.innerHTML = `${porcentaje}%`;
 
 // Actualiza el fondo del círculo según el porcentaje
-document.querySelector('.resultado::before').style.backgroundImage = `conic-gradient(#00ff00 ${porcentaje}%, transparent ${porcentaje}% 100%)`;
+document.querySelector('.resultado').style.backgroundImage = `conic-gradient(#00ff00 ${porcentaje}%, transparent ${porcentaje}% 100%)`;
 
 // Muestra el puntaje y el mensaje en la burbuja de diálogo de Robotín
 document.getElementById('robot-dialog').innerHTML = `Tu puntaje es ${puntaje}. ${resultadoText}`;
