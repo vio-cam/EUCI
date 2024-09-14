@@ -70,12 +70,6 @@ body {
     text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
 }
 
-.quiz-option:hover {
-    background: #00ff00;
-    color: #000;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
-}
-
 /* Robot Enfado */
 .robot-enojo {
     position: fixed;
@@ -84,7 +78,7 @@ body {
     width: 250px;
     height: auto;
     transition: transform 1s ease-out, display 0s linear 1s; /* Transición para mover el robot y retardo para ocultar */
-    z-index: 5; /* Asegura que el robot esté detrás del contenedor */
+    z-index: 10; /* Asegura que el robot esté detrás del contenedor */
 }
 
 .robot-enojo.mostrar-enojo {

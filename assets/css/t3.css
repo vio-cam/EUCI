@@ -78,7 +78,7 @@ body {
     width: 250px;
     height: auto;
     transition: transform 1s ease-out, display 0s linear 1s; /* Transición para mover el robot y retardo para ocultar */
-    z-index: 5; /* Asegura que el robot esté detrás del contenedor */
+    z-index: 10; /* Asegura que el robot esté detrás del contenedor */
 }
 
 .robot-enojo.mostrar-enojo {

@@ -1,29 +1,28 @@
-// Obtén el puntaje del almacenamiento local
-var puntaje = localStorage.getItem('puntaje');
-var resultadoText = '';
-var maxPuntaje = 20; // Puntaje máximo posible
-var porcentaje = ((puntaje / maxPuntaje) * 100).toFixed(0); // Calcula el porcentaje
+// Calcula el porcentaje basado en el puntaje obtenido y máximo posible
+var puntaje = localStorage.getItem('puntaje') || 0;
+var maxPuntaje = 20;
+var porcentaje = ((puntaje / maxPuntaje) * 100).toFixed(0);
 
-// Define el texto del resultado basado en el puntaje
-if (puntaje >= 20) {
-  resultadoText = "¡Wow! Lo hiciste excelente, seguro repasas a menudo";
-} else if (puntaje > 15) {
-  resultadoText = "¡Estás por buen camino! Muy bien :D";
-} else if (puntaje > 11) {
-  resultadoText = "Puedes mejorar, ¡Tú puedes!";
-} else {
-  resultadoText = "Oh bueno... aquí te podemos ayudar a superarte, no te rindas";
-}
-
-// Muestra el porcentaje en el círculo
+// Actualiza el contenido de la barra circular
 var resultadoElement = document.getElementById('resultado');
 resultadoElement.innerHTML = `${porcentaje}%`;
 
-// Actualiza el fondo del círculo según el porcentaje
-document.querySelector('.resultado').style.backgroundImage = `conic-gradient(#00ff00 ${porcentaje}%, transparent ${porcentaje}% 100%)`;
+// Modifica la barra de progreso circular en función del porcentaje
+resultadoElement.style.backgroundImage = `conic-gradient(green ${porcentaje}%, black ${porcentaje}% 100%)`;
 
-// Muestra el puntaje y el mensaje en la burbuja de diálogo de Robotín
+// Muestra el mensaje de puntaje en la burbuja de Robotín
+var resultadoText = '';
+if (puntaje >= 20) {
+    resultadoText = "¡Wow! Lo hiciste excelente, seguro repasas a menudo";
+} else if (puntaje > 15) {
+    resultadoText = "¡Estás por buen camino! Muy bien :D";
+} else if (puntaje > 11) {
+    resultadoText = "Puedes mejorar, ¡Tú puedes!";
+} else {
+    resultadoText = "Oh bueno... aquí te podemos ayudar a superarte, no te rindas";
+}
 document.getElementById('robot-dialog').innerHTML = `Tu puntaje es ${puntaje}. ${resultadoText}`;
+
 
 function si() {
     window.location.href = 'aprende_s.html';
