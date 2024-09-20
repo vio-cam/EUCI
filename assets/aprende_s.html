@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/a_si.css">
     <title>EUCI</title>
 </head>
 <body>
-    <p>Diganos sabe cual es el suyo?</p>
-    <div>
-        <button>Si</button>
-        <button>nunca me lo habia planteado</button>
+    <div class="question-panel">
+        <p>Díganos, ¿sabe cuál es el suyo?</p>
+        <div class="button-panel"></div>
+            <button class="boton" onclick="si()">Sí</button>
+            <button class="boton" onclick="no()">Nunca me lo había planteado</button>
+        </div>
     </div>
+    <script src="js/aprende.js"></script>
 </body>
 </html>

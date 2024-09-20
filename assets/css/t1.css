@@ -3,7 +3,7 @@ body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     color: #e0e0e0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 2, 128, 0.8)), url('../recursos/tecnologia_fondo.png') no-repeat center center fixed;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(13, 0, 128, 0.8)), url('../recursos/tecnologia_fondo.png') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -18,8 +18,8 @@ body {
     background: rgba(0, 0, 0, 0.7);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 0 25px rgba(0, 26, 255, 0.5);
-    width: 80%;
+    box-shadow: 0 0 25px rgba(4, 0, 255, 0.5);
+    width: 90%; /* Ajuste para que ocupe más espacio en pantallas pequeñas */
     max-width: 700px;
     position: relative; /* Necesario para z-index */
     z-index: 10; /* Asegura que el contenedor esté encima del robot */
@@ -28,8 +28,8 @@ body {
 /* Quiz Title */
 .quiz-title {
     font-size: 2.5em;
-    color: #4400ff;
-    text-shadow: 0 0 10px rgba(4, 0, 255, 0.7);
+    color: #0400ff;
+    text-shadow: 0 0 10px rgba(38, 0, 255, 0.7);
     margin-bottom: 20px;
 }
 
@@ -42,10 +42,10 @@ body {
 /* Quiz Image */
 .quiz-image {
     width: 100%;
-    max-width: 250px;
+    max-width: 350px;
     height: auto;
     border-radius: 10px;
-    margin-left: 32%;
+    margin: 0 auto; /* Centra la imagen en su contenedor */
     margin-bottom: 20px;
     display: none;
 }
@@ -61,21 +61,93 @@ body {
 .quiz-option {
     padding: 15px;
     border-radius: 10px;
-    border: 2px solid #00ff00;
+    border: 2px solid #4c00ff;
     background: transparent;
-    color: #00ff00;
+    color: #0011ff;
     cursor: pointer;
     transition: all 0.4s ease;
     font-size: 1.2em;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+    text-shadow: 0 0 5px rgba(0, 38, 255, 0.7);
+}
+
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 2, 128, 0.8)), url('../recursos/tecnologia_fondo.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative; /* Necesario para posicionar el robot en relación a body */
+}
+
+/* Quiz Container */
+.quiz-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(17, 0, 255, 0.5);
+    width: 90%; /* Ajuste para que ocupe más espacio en pantallas pequeñas */
+    max-width: 700px;
+    position: relative; /* Necesario para z-index */
+    z-index: 10; /* Asegura que el contenedor esté encima del robot */
+}
+
+/* Quiz Title */
+.quiz-title {
+    font-size: 2.5em;
+    color: #3700ff;
+    text-shadow: 0 0 10px rgba(55, 0, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+/* Quiz Question */
+.quiz-question {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Quiz Image */
+.quiz-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto; /* Centra la imagen en su contenedor */
+    margin-bottom: 20px;
+    display: none;
+}
+
+/* Quiz Options */
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Quiz Option Button */
+.quiz-option {
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #3700ff;
+    background: transparent;
+    color: #1100ff;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px rgba(0, 26, 255, 0.7);
 }
 
 /* Robot Enfado */
 .robot-enojo {
     position: fixed;
-    bottom: 0; /* Ajusta el espacio desde el fondo */
-    right: -250px; /* Ajusta el espacio desde la derecha para que quede completamente fuera de la pantalla */
-    width: 250px;
+    top: 20px; /* Ajusta el espacio desde la parte superior */
+    right: -350px; /* Ajusta el espacio desde la derecha para que quede completamente fuera de la pantalla */
+    width: 350px; /* Tamaño original del robot */
     height: auto;
     transition: transform 1s ease-out, display 0s linear 1s; /* Transición para mover el robot y retardo para ocultar */
     z-index: 10; /* Asegura que el robot esté detrás del contenedor */
@@ -105,4 +177,36 @@ body {
     background-color: #00ff00;
     color: #000;
     border-color: #00ff00;
+}
+
+/* Diseño responsivo */
+@media (max-width: 900px) {
+    /* Ajustar tamaños para tabletas y pantallas más pequeñas */
+    .quiz-container {
+        padding: 20px; /* Reducir el padding en pantallas pequeñas */
+    }
+
+    .quiz-title {
+        font-size: 2em; /* Ajustar tamaño del título */
+    }
+
+    .quiz-question {
+        font-size: 1.3em; /* Ajustar tamaño de la pregunta */
+    }
+
+    .quiz-option {
+        font-size: 1.1em; /* Ajustar tamaño de los botones de opción */
+    }
+
+    .quiz-image {
+        max-width: 80%; /* Hacer que la imagen ocupe más espacio */
+        margin: 0 auto; /* Centrar la imagen */
+    }
+
+    /* Robot Enfado */
+    .robot-enojo {
+        top: 20px; /* Ajusta la posición superior para tablets */
+        right: -200px; /* Mueve el robot hacia adentro para que sea visible */
+        width: 200px; /* Ajusta el tamaño del robot en pantallas pequeñas */
+    }
 }

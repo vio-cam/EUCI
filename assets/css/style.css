@@ -45,9 +45,9 @@ h1 {
 .descripcion {
     position: absolute;
     top: 1vh; /* Posición ajustada relativa a la altura */
-    left: 2vw; /* Posición ajustada relativa al ancho */
+    left: 1vw; /* Más a la izquierda */
     background: linear-gradient(rgba(17, 34, 52, 0.7), rgba(21, 255, 0, 0.5));
-    padding: 2vh 2vw; /* Padding relativo */
+    padding: 2vh 1vw; /* Padding relativo */
     width: 20vw; /* Ancho ajustado relativo */
     color: white;
     font-family: Arial, sans-serif;
@@ -55,17 +55,14 @@ h1 {
     box-shadow: 0 0 1vw rgba(0, 0, 0, 0.3); /* Sombra relativa */
 }
 
-.descripcion p {
-    margin: 0 0 1vh 0; /* Espaciado entre párrafos relativo */
-    line-height: 1.5;
-}
-
 /* Media Query para pantallas más pequeñas */
 @media (max-width: 768px) {
     .ingreso {
         margin-left: 30%;
         padding: 2vh 3vw;
-    }body {
+    }
+
+    body {
         background-image: url(../recursos/Captura\ de\ pantalla\ 2024-09-11\ 023951.png);
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -119,78 +116,33 @@ h1 {
     .descripcion {
         position: absolute;
         top: 1vh; /* Posición ajustada relativa a la altura */
-        left: 2vw; /* Posición ajustada relativa al ancho */
+        left: 1vw; /* Más a la izquierda */
         background: linear-gradient(rgba(17, 34, 52, 0.7), rgba(21, 255, 0, 0.5));
-        padding: 2vh 2vw; /* Padding relativo */
+        padding: 2vh 1vw; /* Padding relativo */
         width: 20vw; /* Ancho ajustado relativo */
         color: white;
         font-family: Arial, sans-serif;
         border-radius: 1vw; /* Bordes redondeados relativos */
         box-shadow: 0 0 1vw rgba(0, 0, 0, 0.3); /* Sombra relativa */
     }
-    
-    .descripcion p {
-        margin: 0 0 1vh 0; /* Espaciado entre párrafos relativo */
-        line-height: 1.5;
-    }
-    
-    /* Media Query para pantallas más pequeñas */
-    @media (max-width: 768px) {
-        .ingreso {
-            font-size: 3vw; /* Ajusta el tamaño del texto */
-            padding: 2vh 3vw;
-            bottom: 8vh; /* Ajusta el espacio desde el bottom */
-        }
-        
-        .descripcion {
-            left: 5vw;
-            width: 80vw;
-        }
-    }
-    
-    /* Media Query para pantallas muy pequeñas */
-    @media (max-width: 480px) {
-        h1 {
-            font-size: 20vw; /* Ajusta el tamaño del texto en pantallas muy pequeñas */
-            top: 15vh; /* Ajusta el margen superior */
-        }
-        
-        .ingreso {
-            font-size: 4vw; /* Ajusta el tamaño del texto */
-            padding: 2vh 4vw;
-            bottom: 5vh; /* Ajusta el espacio desde el bottom */
-        }
-    
-        .descripcion {
-            left: 4vw;
-            width: 90vw;
-            font-size: 3vw; /* Ajusta el tamaño del texto */
-        }
-    }
-    
-    
-    .descripcion {
-        left: 5vw;
-        width: 80vw;
-    }
 }
 
 /* Media Query para pantallas muy pequeñas */
 @media (max-width: 480px) {
     h1 {
-        font-size: 20vw; /* Ajusta el tamaño del texto en pantallas muy pequeñas */
-        margin-top: 10vh; /* Ajusta el margen superior */
+        font-size: 20vw; /* Tamaño del texto en pantallas muy pequeñas */
+        top: 15vh; /* Ajusta el margen superior */
     }
     
     .ingreso {
-        font-size: 4vw; /* Ajusta el tamaño del texto */
-        margin-left: 20%;
+        font-size: 4vw; /* Tamaño del texto */
         padding: 2vh 4vw;
+        bottom: 5vh; /* Ajusta el espacio desde el bottom */
     }
 
     .descripcion {
         left: 4vw;
         width: 90vw;
-        font-size: 3vw; /* Ajusta el tamaño del texto */
+        font-size: 3vw; /* Tamaño del texto */
     }
 }

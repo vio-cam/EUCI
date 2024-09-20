@@ -1,0 +1,70 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 128, 28, 0.534)), url('../recursos/tecnologia_fondo.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Quiz Container */
+.quiz-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(94, 255, 0, 0.5);
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Quiz Question */
+.pregunta {
+    font-size: 2em;
+    color: #00ff2a;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+/* Button Panel */
+.button-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Quiz Option Button */
+.opciones {
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #00ff88;
+    background: transparent;
+    color: #00ff6a;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px rgba(0, 255, 128, 0.7);
+}
+
+/* Hover Effect for Buttons */
+.opciones:hover {
+    background: #00ff40;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 255, 55, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .pregunta {
+        font-size: 1.5em;
+    }
+
+    .opciones {
+        font-size: 1em;
+        padding: 10px;
+    }
+}

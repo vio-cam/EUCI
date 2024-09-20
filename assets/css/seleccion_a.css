@@ -1,0 +1,58 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(128, 0, 0, 0.8)), url('../recursos/tecnologia_fondo.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Panel */
+.panel {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Texto de introducción */
+p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+/* Botones */
+button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff0000; /* Fondo rojo */
+    color: #fff; /* Texto blanco */
+    font-size: 1.2em;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de transición */
+}
+
+/* Efecto hover para los botones */
+button:hover {
+    background-color: #cc0000; /* Rojo más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Efecto de aumento */
+}
+
+/* Diseño responsivo */
+@media (max-width: 600px) {
+    p {
+        font-size: 1.2em; /* Ajustar tamaño del texto */
+    }
+
+    button {
+        font-size: 1em; /* Ajustar tamaño del botón */
+        padding: 10px 20px; /* Ajustar padding del botón */
+    }
+}

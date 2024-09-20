@@ -1,0 +1,85 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(15, 128, 0, 0.8)), url('../recursos/tecnologia_fondo.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Quiz Container */
+.cont1 {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.5);
+    width: 80%;
+    max-width: 700px;
+    position: relative;
+}
+
+/* Resultado */
+.resultado {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #00ff00;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+}
+
+/* Temporizador */
+.temporizador {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #ffcc00;
+    text-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
+}
+
+/* Botón Continuar */
+.botonR {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: 2px solid #00ff00;
+    border-radius: 25px;
+    background: transparent;
+    color: #00ff00;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+    margin-top: 20px;
+}
+
+.botonR:disabled {
+    background: rgba(0, 0, 0, 0.5);
+    cursor: not-allowed;
+}
+
+.botonR:hover:not(:disabled) {
+    background: #00ff00;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+}
+
+/* Diseño responsivo */
+@media (max-width: 600px) {
+    .cont1 {
+        padding: 20px;
+    }
+
+    .resultado {
+        font-size: 1.2em;
+    }
+
+    .temporizador {
+        font-size: 1em;
+    }
+
+    .botonR {
+        padding: 8px 15px;
+        font-size: 1em;
+    }
+}
