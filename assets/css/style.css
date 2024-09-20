@@ -19,6 +19,16 @@ h1 {
     color: aliceblue;
 }
 
+/* Contenedor para botón y descripción */
+.container {
+    position: absolute;
+    bottom: 15vh; /* Ajusta la distancia del fondo */
+    left: 50%; /* Centra el contenedor */
+    transform: translateX(-50%); /* Compensa el desplazamiento */
+    display: flex; /* Usar flexbox para alinear elementos */
+    align-items: center; /* Centra verticalmente */
+}
+
 /* Botón */
 .ingreso {
     font-size: 5vw; /* Tamaño más grande para el botón */
@@ -29,11 +39,7 @@ h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 500;
     border: 0.5vw solid rgb(21, 255, 0);
-    position: absolute; /* Mantiene la posición fija */
-    bottom: 15vh; /* Espacio desde el fondo */
-    left: 50%; /* Centra horizontalmente */
-    transform: translateX(-50%); /* Compensa el desplazamiento */
-    z-index: 10; /* Asegura que el botón esté encima de otros elementos */
+    margin-left: 2vw; /* Espacio entre la descripción y el botón */
 }
 
 .ingreso:hover {
@@ -44,23 +50,20 @@ h1 {
 
 /* Descripción */
 .descripcion {
-    position: absolute;
-    top: 25vh; /* Posición ajustada para estar más arriba */
-    left: 5vw; /* Ajusta la posición a la izquierda */
     background: rgba(17, 34, 52, 0.8); /* Fondo oscuro */
     padding: 2vh 1vw;
-    width: 40vw; /* Ancho ajustado */
+    width: 40vw; /* Ajusta el ancho */
     color: white;
     font-family: Arial, sans-serif;
     border-radius: 1vw;
     box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5);
-    z-index: 5; /* Asegura que la descripción esté debajo del botón */
 }
 
 /* Media Query para pantallas específicas */
 @media (max-width: 720px) {
-    body {
-        position: relative; /* Necesario para posicionar elementos hijos absolutamente */
+    .container {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
     }
 
     .ingreso {
@@ -69,7 +72,7 @@ h1 {
     }
 
     .descripcion {
-        top: 20vh; /* Ajusta la posición de la descripción */
         width: 80vw; /* Aumenta el ancho para mejor visualización */
+        margin-bottom: 2vh; /* Espacio entre la descripción y el botón */
     }
 }
