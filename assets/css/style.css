@@ -23,9 +23,7 @@ h1 {
 .ingreso {
     font-size: 2vw;
     margin-left: 40%;
-    margin-top: 0;
     padding: 2vh 2vw;
-    padding-right: 12vw;
     background-color: transparent;
     text-decoration: none;
     color: white;
@@ -43,34 +41,33 @@ h1 {
 /* Descripción */
 .descripcion {
     position: absolute;
-    top: 1vh;
-    left: 1vw;
+    top: 10vh; /* Ajustar según sea necesario */
+    left: 5vw; /* Más a la izquierda */
     background: linear-gradient(rgba(17, 34, 52, 0.7), rgba(21, 255, 0, 0.5));
     padding: 2vh 1vw;
-    width: 20vw;
+    width: 90vw; /* Aumenta el ancho para pantallas más pequeñas */
     color: white;
     font-family: Arial, sans-serif;
     border-radius: 1vw;
     box-shadow: 0 0 1vw rgba(0, 0, 0, 0.3);
 }
 
-/* Media Query para pantallas más pequeñas */
-@media (max-width: 768px) {
+/* Media Query para pantallas específicas */
+@media (max-width: 720px) {
     body {
         position: relative; /* Necesario para posicionar elementos hijos absolutamente */
     }
 
     .ingreso {
-        font-size: 4vw; /* Aumenta el tamaño del texto */
-        padding: 4vh 4vw; /* Aumenta el padding */
+        font-size: 5vw; /* Tamaño más grande para el botón */
+        padding: 5vh 5vw; /* Aumenta el padding */
         border-width: 0.6vw; /* Grosor del borde */
-        bottom: 10vh; /* Espacio desde el fondo */
+        bottom: 15vh; /* Ajusta el espacio desde el fondo */
         position: absolute; /* Mantiene la posición fija */
         left: 50%; /* Centra horizontalmente */
         transform: translateX(-50%); /* Compensa el desplazamiento */
-        background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para mayor contraste */
+        background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
         color: white; /* Asegura que el texto sea blanco */
-        border: 0.6vw solid rgb(21, 255, 0); /* Bordes destacados */
     }
 
     .ingreso:hover {
@@ -93,15 +90,8 @@ h1 {
 
     /* Descripción */
     .descripcion {
-        position: absolute;
-        top: 1vh;
-        left: 1vw;
-        background: linear-gradient(rgba(17, 34, 52, 0.7), rgba(21, 255, 0, 0.5));
-        padding: 2vh 1vw;
-        width: 20vw;
-        color: white;
-        font-family: Arial, sans-serif;
-        border-radius: 1vw;
-        box-shadow: 0 0 1vw rgba(0, 0, 0, 0.3);
+        top: 15vh; /* Aumenta la distancia del top */
+        left: 5vw; /* Más a la izquierda */
+        width: 90vw; /* Ancho adaptado */
     }
 }
