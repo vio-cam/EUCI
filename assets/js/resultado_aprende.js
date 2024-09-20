@@ -10,16 +10,16 @@ function continuar(url) {
 
 if (puntaje >= 10) {
     est_apren = "Tu aprendizaje es multimodal.";
-    continuar('/assets/tipos/multimodal.html');
+    continuar('tipos/multimodal.html');
 } else if (puntaje >= 8) {
     est_apren = "Tu aprendizaje es auditivo.";
-    continuar('/assets/tipos/auditivo.html');
+    continuar('tipos/auditivo.html');
 } else if (puntaje >= 4) {
     est_apren = "Tu aprendizaje es verbal.";
-    continuar('/assets/tipos/verbal.html');
+    continuar('tipos/verbal.html');
 } else if (puntaje >= 1) {
     est_apren = "Tu aprendizaje es visual.";
-    continuar('/assets/tipos/visual.html');
+    continuar('tipos/visual.html');
 } else {
     est_apren = "Has presionado en reiteradas veces la opción 'No', por favor no se tome esto como un juego, intenta de nuevo después de.";
     iniciarTemporizador();
