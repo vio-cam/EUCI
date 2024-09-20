@@ -56,6 +56,10 @@ h1 {
 
 /* Media Query para pantallas más pequeñas */
 @media (max-width: 768px) {
+    body {
+        position: relative; /* Necesario para posicionar elementos hijos absolutamente */
+    }
+
     .ingreso {
         font-size: 4vw; /* Aumenta el tamaño del texto */
         padding: 4vh 4vw; /* Aumenta el padding */
@@ -64,15 +68,14 @@ h1 {
         position: absolute; /* Mantiene la posición fija */
         left: 50%; /* Centra horizontalmente */
         transform: translateX(-50%); /* Compensa el desplazamiento */
+        background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para mayor contraste */
+        color: white; /* Asegura que el texto sea blanco */
+        border: 0.6vw solid rgb(21, 255, 0); /* Bordes destacados */
     }
 
     .ingreso:hover {
         border-radius: 3vw; /* Bordes más redondeados */
         box-shadow: 0 0 1vw rgb(21, 255, 0), 0 0 4vw rgb(21, 255, 0), 0 0 8vw rgb(21, 255, 0), 0 0 25vw rgba(255, 255, 255, 0.7);
-    }
-
-    body {
-        position: relative; /* Necesario para posicionar elementos hijos absolutamente */
     }
 
     /* Encabezado */
