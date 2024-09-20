@@ -91,7 +91,7 @@ h1 {
     /* Botón */
     .ingreso {
         position: absolute; /* Permite mantener el botón en una posición fija */
-        bottom: 10vh; /* Ajusta el espacio desde el bottom en relación a la altura de la ventana */
+        bottom: 12vh; /* Ajusta el espacio desde el bottom en relación a la altura de la ventana */
         left: 50%; /* Centra horizontalmente */
         transform: translateX(-50%); /* Compensa el desplazamiento para centrar */
         font-size: 2vw; /* Tamaño del texto relativo al viewport */
