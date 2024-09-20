@@ -15,41 +15,46 @@ h1 {
     font-family: "Unkempt", cursive;
     font-size: 15vw;
     text-align: center;
-    margin-top: 25vh;
+    margin-top: 20vh; /* Ajusta el margen superior */
     color: aliceblue;
 }
 
 /* Botón */
 .ingreso {
-    font-size: 2vw;
-    margin-left: 40%;
-    padding: 2vh 2vw;
-    background-color: transparent;
+    font-size: 5vw; /* Tamaño más grande para el botón */
+    padding: 4vh 4vw; /* Aumenta el padding */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para mejor contraste */
     text-decoration: none;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 500;
-    border: 0.4vw solid rgb(21, 255, 0);
+    border: 0.5vw solid rgb(21, 255, 0);
+    position: absolute; /* Mantiene la posición fija */
+    bottom: 15vh; /* Espacio desde el fondo */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Compensa el desplazamiento */
+    z-index: 10; /* Asegura que el botón esté encima de otros elementos */
 }
 
 .ingreso:hover {
-    transition: all 1s;
-    border-radius: 2vw;
-    box-shadow: 0 0 0.5vw rgb(21, 255, 0), 0 0 2.5vw rgb(21, 255, 0), 0 0 5vw rgb(21, 255, 0), 0 0 20vw rgb(255, 255, 255);
+    transition: all 0.3s;
+    border-radius: 3vw; /* Bordes más redondeados */
+    box-shadow: 0 0 1vw rgb(21, 255, 0), 0 0 4vw rgb(21, 255, 0), 0 0 8vw rgb(21, 255, 0), 0 0 20vw rgba(255, 255, 255, 0.5);
 }
 
 /* Descripción */
 .descripcion {
     position: absolute;
-    top: 10vh; /* Ajustar según sea necesario */
-    left: 5vw; /* Más a la izquierda */
-    background: linear-gradient(rgba(17, 34, 52, 0.7), rgba(21, 255, 0, 0.5));
+    top: 25vh; /* Posición ajustada para estar más arriba */
+    left: 5vw; /* Ajusta la posición a la izquierda */
+    background: rgba(17, 34, 52, 0.8); /* Fondo oscuro */
     padding: 2vh 1vw;
-    width: 90vw; /* Aumenta el ancho para pantallas más pequeñas */
+    width: 40vw; /* Ancho ajustado */
     color: white;
     font-family: Arial, sans-serif;
     border-radius: 1vw;
-    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5);
+    z-index: 5; /* Asegura que la descripción esté debajo del botón */
 }
 
 /* Media Query para pantallas específicas */
@@ -59,39 +64,12 @@ h1 {
     }
 
     .ingreso {
-        font-size: 5vw; /* Tamaño más grande para el botón */
+        font-size: 6vw; /* Tamaño más grande para el botón en móviles */
         padding: 5vh 5vw; /* Aumenta el padding */
-        border-width: 0.6vw; /* Grosor del borde */
-        bottom: 15vh; /* Ajusta el espacio desde el fondo */
-        position: absolute; /* Mantiene la posición fija */
-        left: 50%; /* Centra horizontalmente */
-        transform: translateX(-50%); /* Compensa el desplazamiento */
-        background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
-        color: white; /* Asegura que el texto sea blanco */
     }
 
-    .ingreso:hover {
-        border-radius: 3vw; /* Bordes más redondeados */
-        box-shadow: 0 0 1vw rgb(21, 255, 0), 0 0 4vw rgb(21, 255, 0), 0 0 8vw rgb(21, 255, 0), 0 0 25vw rgba(255, 255, 255, 0.7);
-    }
-
-    /* Encabezado */
-    h1 {
-        position: absolute;
-        top: 25vh;
-        left: 50%;
-        transform: translateX(-50%);
-        font-family: "Unkempt", cursive;
-        font-size: 15vw;
-        text-align: center;
-        color: aliceblue;
-        margin: 0;
-    }
-
-    /* Descripción */
     .descripcion {
-        top: 15vh; /* Aumenta la distancia del top */
-        left: 5vw; /* Más a la izquierda */
-        width: 90vw; /* Ancho adaptado */
+        top: 20vh; /* Ajusta la posición de la descripción */
+        width: 80vw; /* Aumenta el ancho para mejor visualización */
     }
 }
