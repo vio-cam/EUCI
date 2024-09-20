@@ -10,7 +10,7 @@ function continuar(url) {
 
 if (puntaje >= 10) {
     est_apren = "Tu aprendizaje es multimodal.";
-    continuar('/assets/tipos/multimodal.html');
+    continuar('tipos/multimodal.html');
 } else if (puntaje >= 8) {
     est_apren = "Tu aprendizaje es auditivo.";
     continuar('/assets/tipos/auditivo.html');
