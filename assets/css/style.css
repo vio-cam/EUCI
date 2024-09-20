@@ -127,22 +127,3 @@ h1 {
     }
 }
 
-/* Media Query para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 20vw; /* Tamaño del texto en pantallas muy pequeñas */
-        top: 15vh; /* Ajusta el margen superior */
-    }
-    
-    .ingreso {
-        font-size: 4vw; /* Tamaño del texto */
-        padding: 2vh 4vw;
-        bottom: 5vh; /* Ajusta el espacio desde el bottom */
-    }
-
-    .descripcion {
-        left: 4vw;
-        width: 90vw;
-        font-size: 3vw; /* Tamaño del texto */
-    }
-}
